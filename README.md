@@ -38,7 +38,8 @@ If byte code is less tan 100 then extra zeroes are added at left: "032".
 If file is bigger than 1GB:
 
 <pre>Read file line by line and split it to two-level folders structure. 
-It will be done in the same way, the only difference is that we will use second char to create nested folder.
+It will be done in the same way.
+The only difference is that we will use second char to create nested folder.
 </pre>
 
 Then:
@@ -48,7 +49,8 @@ Take first file after split.
 Split it into smaller files with N lines.
 
 That setting `LinesReadLimit` can be applied in the app.config.
-Default value is 300_000 lines. If file exceeds that number of lines we then split it to files with that number of lines.
+Default value is 300_000 lines.
+If file exceeds that number of lines we then split it to files with that number of lines.
 
 Sort all files.
 Merge files: Take two first files, read them line by line, write to the third temp file.
