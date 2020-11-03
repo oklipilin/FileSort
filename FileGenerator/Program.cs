@@ -41,7 +41,7 @@ namespace FileGnerator
             using (var generatedFile = File.Open(ConfigurationSettings.OutFile, FileMode.Create))
             using (var sw = new StreamWriter(generatedFile))
             {
-                while (generatedFileSize <= ConfigurationSettings.FileSize)
+                while (generatedFileSize < ConfigurationSettings.FileSize)
                 {
                     var stringPart = GetRandomString();
 
