@@ -47,7 +47,7 @@ Then:
 Take first file after split.
 Split it into smaller files with N lines.
 
-That setting "LinesReadLimit" can be applied in the app.config.
+That setting `LinesReadLimit` can be applied in the app.config.
 Default value is 300_000 lines. If file exceeds that number of lines we then split it to files with that number of lines.
 
 Sort all files.
@@ -61,10 +61,10 @@ When all files are sorted just combine them appropriately to the order of folder
 </pre>
 
 Please note that algorithm does not have possibility to detect available RAM and adapt to it.
-So, settings like "LinesReadLimit" and "LinesListsLimit" can be set manually.
+So, settings like `LinesReadLimit` and `LinesListsLimit` can be set manually.
 
 During sorting of the file with size of 43GB (each line is ~500 characters) application used ~3GB of memory.
-To decrease memory usage we can set LinesReadLimit to 100_000 and LinesListsLimit to 2.
+To decrease memory usage we can set `LinesReadLimit` to 100_000 and `LinesListsLimit` to 2.
 
 To run file sort applicaiton you need to fill in `File` parameter in the app.config with the path to the input file.
 
@@ -74,16 +74,14 @@ To run file sort applicaiton you need to fill in `File` parameter in the app.con
 
 Please note that file generator has such list of configurable parameters in app.config:
 
-<pre>
-chars: set of characters which are used for generation `String` part of the line
+`chars`: set of characters which are used for generation `String` part of the line
 
-size: desired file size in bytes
+`size`: desired file size in bytes
 
-duplicatesProbability: percentage of possible lines duplicates in the file with the same `String` part and different `Number` part.
+`duplicatesProbability`: percentage of possible lines duplicates in the file with the same `String` part and different `Number` part.
 
-numberMinValue and numberMaxValue: range of generated numbers for `Number` part
+`numberMinValue` and `numberMaxValue`: range of generated numbers for `Number` part
 
-outFile: file name of generated file
+`outFile`: file name of generated file
 
-textMinLength and textMaxLength: range of length limit for `String` part.
-</pre>
+`textMinLength` and `textMaxLength`: range of length limit for `String` part.
