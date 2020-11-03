@@ -2,7 +2,7 @@
 
 Sorting algorithm for large files.
 File encoding is UTF-8.
-Each line has a format: Number. String
+Each line has format: `Number. String`
 Sample of input file:
 
 <pre>415. Apple
