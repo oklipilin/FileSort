@@ -53,8 +53,6 @@ Default value is 300_000 lines. If file exceeds that number of lines we then spl
 Sort all files.
 Merge files: Take two first files, read them line by line, write to the third temp file.
 
-
-
 Repeat action until we have only one final sorted file.
 
 Move to the next file until all files are sorted.
