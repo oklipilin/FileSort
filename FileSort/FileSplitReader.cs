@@ -11,6 +11,8 @@ namespace FileSort
 {
     public class FileSplitReader
     {
+        private const int fileLimitToSplit = 1024 * 1024 * 1024; // 1 GB
+
         public static string RootPath = "Tmp";
 
         private ManualResetEvent syncReader;
@@ -45,6 +47,8 @@ namespace FileSort
                 Directory.Delete(RootPath, true);
             }
 
+            var fileSize = new FileInfo(path).Length;
+
             Console.WriteLine($"Splitter start");
             var idx = 0;
             try
@@ -73,7 +77,7 @@ namespace FileSort
                             c1 = char.ToLower(line[dotIndex + 2]);
                         }
 
-                        if (line.Length > dotIndex + 3)
+                        if (line.Length > dotIndex + 3 && fileSize > fileLimitToSplit)
                         {
                             c2 = char.ToLower(line[dotIndex + 3]);
                         }
