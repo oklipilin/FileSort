@@ -37,7 +37,7 @@ If byte code is less tan 100 then extra zeroes are added at left: "032".
 
 If file is bigger than 1GB:
 
-<pre>Read file line by line and split it to two-level folders structore. 
+<pre>Read file line by line and split it to two-level folders structure. 
 It will be done in the same way, the only difference is that we will use second char to create nested folder.
 </pre>
 
