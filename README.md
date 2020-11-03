@@ -74,9 +74,16 @@ To run file sort applicaiton you need to fill in `File` parameter in the app.con
 
 Please note that file generator has such list of configurable parameters in app.config:
 
+<pre>
 chars: set of characters which are used for generation `String` part of the line
+
 size: desired file size in bytes
+
 duplicatesProbability: percentage of possible lines duplicates in the file with the same `String` part and different `Number` part.
+
 numberMinValue and numberMaxValue: range of generated numbers for `Number` part
+
 outFile: file name of generated file
+
 textMinLength and textMaxLength: range of length limit for `String` part.
+</pre>
