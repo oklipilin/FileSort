@@ -71,6 +71,7 @@ To decrease memory usage we can set `LinesReadLimit` to 100_000 and `LinesListsL
 To run file sort applicaiton you need to fill in `File` parameter in the app.config with the path to the input file.
 
 <b>Please note</b>: Console output is redirected to the logs.txt file in the root folder of application.
+Required free space on HDD is ~2.5x of initial file size.
 
 # FileGenerator
 
