@@ -11,6 +11,16 @@ Sample of input file:
 32. Cherry is the best
 2. Banana is yellow</pre>
 
+After processing we should get this:
+
+<pre>
+1. Apple
+415. Apple
+2. Banana is yellow
+32. Cherry is the best
+30432. Something something something
+</pre>
+
 Sorting should be done in that way: first order by String part, then sort by Number part.
 Number does not have any range limits, so we will expect it to be `BigInteger`.
 
@@ -43,6 +53,8 @@ Default value is 300_000 lines. If file exceeds that number of lines we then spl
 Sort all files.
 Merge files: Take two first files, read them line by line, write to the third temp file.
 
+
+
 Repeat action until we have only one final sorted file.
 
 Move to the next file until all files are sorted.
@@ -55,3 +67,18 @@ So, settings like "LinesReadLimit" and "LinesListsLimit" can be set manually.
 
 During sorting of the file with size of 43GB (each line is ~500 characters) application used ~3GB of memory.
 To decrease memory usage we can set LinesReadLimit to 100_000 and LinesListsLimit to 2.
+
+To run file sort applicaiton you need to fill in `File` parameter in the app.config with the path to the input file.
+
+<b>Please note</b>: Console output is redirected to the logs.txt file in the root folder of application.
+
+# FileGenerator
+
+Please note that file generator has such list of configurable parameters in app.config:
+
+chars: set of characters which are used for generation `String` part of the line
+size: desired file size in bytes
+duplicatesProbability: percentage of possible lines duplicates in the file with the same `String` part and different `Number` part.
+numberMinValue and numberMaxValue: range of generated numbers for `Number` part
+outFile: file name of generated file
+textMinLength and textMaxLength: range of length limit for `String` part.
