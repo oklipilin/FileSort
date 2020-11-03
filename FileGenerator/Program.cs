@@ -41,7 +41,7 @@ namespace FileGnerator
             using (var generatedFile = File.Open(ConfigurationSettings.OutFile, FileMode.Create))
             using (var sw = new StreamWriter(generatedFile))
             {
-                while (generatedFileSize < ConfigurationSettings.FileSize)
+                while (generatedFileSize <= ConfigurationSettings.FileSize)
                 {
                     var stringPart = GetRandomString();
 
@@ -60,7 +60,8 @@ namespace FileGnerator
 
                     var numberPart = GetRandomNumber();
 
-                    sw.WriteLine($"{numberPart}. {stringPart}");
+                    var newLine = $"{numberPart}. {stringPart}";
+                    sw.WriteLine(newLine);
 
                     int newPercentage = (int)(generatedFileSize / ConfigurationSettings.FileSize * 100);
 
@@ -71,7 +72,7 @@ namespace FileGnerator
                         lastPercentageNotified = newPercentage;
                     }
 
-                    generatedFileSize += stringPart.Length + 2;
+                    generatedFileSize += newLine.Length + 2;
                 }
 
                 sw.Close();
